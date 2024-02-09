@@ -4,6 +4,7 @@ import android.text.style.BackgroundColorSpan
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -23,8 +24,25 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.unit.dp
+
+@Preview
+@Composable
+fun SmartLab ()
+{
+    val myColor: Color = Color(0xFF0000FF)
+
+    Column (
+        modifier = Modifier.run {
+            fillMaxSize()
+                .background(myColor)
+        }
+    ) {
 
 
+    }
+}
 
 @Preview
 @Composable
@@ -41,7 +59,7 @@ fun LogIn () {
             fontWeight = FontWeight.Bold,textAlign = TextAlign.Center,modifier = Modifier.fillMaxWidth(1f)
         )
         Text(
-            text = "Войдите, чтобы воспользоваться функциями приложения", fontSize = 16.sp,fontFamily=FontFamily.SansSerif
+            text = " Войдите, чтобы воспользоваться \n функциями приложения", fontSize = 16.sp,fontFamily=FontFamily.SansSerif
         )
         Text(
             text = "Вход по E-mail", color = Color.Gray,fontStyle = FontStyle.Italic,fontSize = 12.sp,fontFamily=FontFamily.SansSerif
@@ -55,12 +73,15 @@ fun LogIn () {
                 text = "Далее",fontFamily=FontFamily.SansSerif,fontSize = 14.sp
             )
         }
+
         Text(
             text = "Или войти с помощью", color = Color.Gray,fontStyle = FontStyle.Italic,fontSize = 12.sp,fontFamily=FontFamily.SansSerif,textAlign = TextAlign.Center,modifier = Modifier.fillMaxWidth(1f)
         )
-        Button(onClick = {}) {
-            Text(text = "Войти с Яндекс",fontFamily=FontFamily.SansSerif,fontSize = 14.sp,textAlign = TextAlign.Center,modifier = Modifier.fillMaxWidth(1f))
+        Button(onClick = {}, modifier = Modifier
+            .padding(top = 550.dp)) {
+            Text(text = "Войти с Яндекс",fontFamily=FontFamily.SansSerif,fontSize = 14.sp,textAlign = TextAlign.Center)
         }
+
 
     }
 }
